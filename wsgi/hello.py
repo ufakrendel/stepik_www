@@ -1,10 +1,8 @@
 def worker(environ):
-    val = str(environ['wcgi.input'])
-    val = val[val.index('?')+1:]
-    res =  val.split('&')
-    result = '\n'.join(res) 
-    return result
- 
+        val = str(environ['QUERY_STRING'])
+        res =  val.split('&')
+        result = '\n'.join(res)
+        return result
 
 def application(environ, start_response):
     status = '200 OK'
@@ -12,3 +10,4 @@ def application(environ, start_response):
     body = worker(environ)
     start_response(status, headers)
     return [body]
+
