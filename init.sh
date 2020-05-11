@@ -10,7 +10,8 @@ sudo rm /etc/nginx/sites-enabled/default
 cp ./wsgi/hello.py /home/box/web/hello.py
 rm /etc/gunicorn.d/*
 cp ./wsgi/wsgi.config /home/box/web/etc/hello.py
-gunicorn -c /home/box/web/etc/hello.py /home/box/web/hello:application --daemon
+cd /home/box/web/
+gunicorn -c /home/box/web/etc/hello.py hello:application --daemon
 
 sudo ln -s /home/box/web/etc/hello.py /etc/gunicorn.d/hello.py
 
