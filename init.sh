@@ -9,8 +9,25 @@ sudo rm /etc/nginx/sites-enabled/default
 
 
 cd /home/box/web/
+
+sudo apt-get update
+sudo apt install python3.5
+PYTHON_PATH=$(which python3.5)
+virtualenv -p "$PYTHON_PATH" web_study 2>/dev/null
+source web_study/bin/activate
+
+pip install gunicorn django==2.1
+
 gunicorn -b :8080 hello:application --daemon
 sudo nginx
+
+cd /home/box/web/
+python3 django-admin.py startproject ask
+cd ask
+python3 ./manage.py startapp qa
+
+gunicorn --bind 0.0.0.0:8000 ask.wsgi --daemon
+
 
 
 
