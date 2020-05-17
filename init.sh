@@ -22,9 +22,9 @@ gunicorn -b :8080 hello:application --daemon
 sudo nginx
 
 cd /home/box/web/
-python3 django-admin.py startproject ask
+django-admin startproject as$$$$$
 cd ask
-python3 ./manage.py startapp qa
+./manage.py startapp qa
 
 gunicorn --bind 0.0.0.0:8000 ask.wsgi --daemon
 
