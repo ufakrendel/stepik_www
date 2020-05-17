@@ -22,7 +22,7 @@ gunicorn -b :8080 hello:application --daemon
 sudo nginx
 
 cd /home/box/web/
-django-admin startproject ask
+django-admin startproject as$$$$$
 cd ask
 ./manage.py startapp qa
 
