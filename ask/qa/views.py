@@ -5,7 +5,7 @@ from django.http import HttpResponse
 def test(request, *args, **kwargs):
 	return HttpResponse('OK')
 
-def empty(request:
+def empty(request):
 	return HttpResponse('OK')
 
 def question(request, *args):
