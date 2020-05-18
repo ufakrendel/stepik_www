@@ -5,12 +5,14 @@ from django.http import HttpResponse
 def test(request, *args, **kwargs):
 	return HttpResponse('OK')
 
-def empty(request)
+def empty(request:
 	return HttpResponse('OK')
 
-def question(request, id)
+def question(request, *args)
 	output = '<h2> id </h2>'
 	return HttpResponse(output)
+
+
 
 
 # Create your views here.
