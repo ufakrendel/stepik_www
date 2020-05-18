@@ -17,12 +17,13 @@ from django.conf.urls import url
 from django.contrib import admin
 from qa import views
 
-urlpatterns = [	
-	path(r'^admin/', admin.site.urls),
-	path(r'^login/',views.empty),
-	path(r'^signup/',views.empty),
-	path(r'^question/<int:id>/',view.question),
-	path(r'^ask/',views.empty),
-	path(r'^popular',views.empty),
-	path(r'^new',views.empty)
+urlpatterns = [
+	url(r'^$', views.empty),
+	url(r'^admin/', admin.site.urls),
+	url(r'^login/',views.empty),
+	url(r'^signup/',views.empty),
+	url(r'^question/(\d+)/',view.question),
+	url(r'^ask/',views.empty),
+	url(r'^popular/',views.empty),
+	url(r'^new/',views.empty)
 ]
