@@ -8,7 +8,7 @@ def test(request, *args, **kwargs):
 def empty(request:
 	return HttpResponse('OK')
 
-def question(request, *args)
+def question(request, *args):
 	output = '<h2> id </h2>'
 	return HttpResponse(output)
 
